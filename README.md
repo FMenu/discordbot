@@ -1,6 +1,10 @@
 # FMenu Discord Bot
 <p><b> The Discord Bot for the FMenu Discordserver</b></p>
 
+
+## Requirements
+Typescript, ts-node
+
 ## How to use
 edit the `.env` file to include your token.
 ```sh
