@@ -1,0 +1,6 @@
+{
+  "name": "fmenu",
+  "language": "typescript",
+  "manager": "yarn",
+  "prefix": "fm$"
+}
