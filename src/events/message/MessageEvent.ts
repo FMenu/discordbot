@@ -14,8 +14,14 @@ export default class MessageEvent extends BaseEvent {
         .slice(client.prefix.length)
         .trim()
         .split(/\s+/);
+
       const command = client.commands.get(cmdName);
-      if (command) {
+      if (command && command.getPermissions()) {
+        if (command.getPermissions().check(message.member?.permissions.toArray()))
+          command.run(client, message, cmdArgs);
+        else
+          message.channel.send('⚠ You don\'t have the permissions to use this command. ⚠')
+      } else if (command && !command.getPermissions()) {
         command.run(client, message, cmdArgs);
       }
     }
